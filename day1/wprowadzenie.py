@@ -241,3 +241,10 @@ print(pusty_zbior)  # set()
 lista = [1, 2, 3, 4, 4, 7, 7, 6, 5, 1, 2, 3]
 zbior = set(lista)
 print(zbior)  # {1, 2, 3, 4, 5, 6, 7}
+
+# słownik - klucz:wartosc
+# {"name" : "John", "age" :30, "car" : None}
+# json - slownik jest odwzorowaniem jsona
+pusty_slownik = {}
+print(type(pusty_slownik))  # <class 'dict'>
+print(pusty_slownik)  # {}
