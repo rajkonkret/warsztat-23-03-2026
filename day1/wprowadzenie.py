@@ -308,3 +308,19 @@ while True:
 print("Dalsza część programu")
 # Wybierz swoją przekąskępizza
 # Dalsza część programu
+
+# operator morsa, walrus operator
+while (choice := input(prompt)) not in przekaski:
+    if choice == "exit":
+        break
+    print("Nie ma")
+
+name = "Radek"
+a = len(name)
+if a > 4:
+    print("Długość większa od 4, wynosi:", a)
+
+if (a := len(name)) > 4:
+    print("Długość większa od 4, wynosi:", a)
+
+odp = "Radek"
