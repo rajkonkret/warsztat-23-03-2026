@@ -218,3 +218,24 @@ print(miasto.count("Łódź"))  # występuje 1 raz
 # del miasto[0] # TypeError: 'tuple' object doesn't support item deletion
 del miasto
 # print(miasto) # NameError: name 'miasto' is not defined
+
+# zbiór, set
+# nie zachowuje kolejnosci
+# nie zachowuje duplikatów
+# hashowane
+
+drzewa = {'jodała', "buk", "Świerk", "dąb", "klon"}
+print(drzewa)
+# {'buk', 'dąb', 'Świerk', 'klon', 'jodała'}
+
+drzewa.add("osika")
+drzewa.add("osika")
+drzewa.add("osika")
+print(drzewa)  # {'osika', 'dąb', 'klon', 'jodała', 'buk', 'Świerk'}
+print(type(drzewa))  # <class 'set'>
+
+# pusty zbiór
+pusty_zbior = set()
+print(pusty_zbior)  # set()
+
+
