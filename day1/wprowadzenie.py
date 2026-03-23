@@ -168,3 +168,36 @@ print("index:", index, "wartosć:", wartosc, sep="---")
 # dedykowane do logów
 print("a: %i b: %s" % (index, wartosc))
 # a: 114 b: Michał
+
+nowe_imie = imiona  # kopia referencji
+
+print(imiona)
+print(nowe_imie)
+# ['Jan', 'Piotr', 'Anna', 'Michał']
+# ['Jan', 'Piotr', 'Anna', 'Michał']
+print(id(imiona))  # 2480506326976
+print(id(nowe_imie))  # 2480506326976
+nowa_lista = imiona.copy()
+print(id(nowa_lista))  # 2091621006016
+
+a = 1
+b = 3
+a = b
+b = 8
+print(a, b)  # 3 8
+
+imiona.clear()
+print(imiona)  # []
+print(nowe_imie)  # []
+
+nowe_imie.append("Radek")
+print(imiona)
+print(nowe_imie)
+# ['Radek']
+# ['Radek']
+
+pimie = imiona[:]
+qimie = list(imiona)
+print(id(pimie))  # 2557273462976
+print(id(qimie))  # 2557273618688
+print(id(imiona))  # 2557271199680
