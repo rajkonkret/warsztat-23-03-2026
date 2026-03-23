@@ -296,3 +296,15 @@ while licznik < 10:
     licznik += 1  # licznik = licznik + 1
     print("Licznik dane 2")
 
+przekaski = ['hotdog', 'pizza', 'hamburger', 'frytki']
+prompt = "Wybierz swoją przekąskę"
+
+while True:
+    choice = input(prompt)
+
+    if choice in przekaski:
+        break
+    print("Nie ma")
+print("Dalsza część programu")
+# Wybierz swoją przekąskępizza
+# Dalsza część programu
