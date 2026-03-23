@@ -261,18 +261,38 @@ print(osoba)
 
 print(type(osoba))  # <class 'dict'>
 
-print(osoba['miasto']) # Łódź
+print(osoba['miasto'])  # Łódź
 # print(osoba["Miasto"]) # KeyError: 'Miasto'
 
 print(osoba.get('miasto'))
-print(osoba.get('Miasto')) # None
-print(osoba.get("Miasto", "default")) # default
+print(osoba.get('Miasto'))  # None
+print(osoba.get("Miasto", "default"))  # default
 
 osoba['imie'] = "Radek"
 print(osoba)
 # {'id': 89, 'imie': 'Radek', 'rok': 1976, 'miasto': 'Łódź'}
 
-print(osoba.keys()) # dict_keys(['id', 'imie', 'rok', 'miasto'])
-print(osoba.values()) # dict_values([89, 'Radek', 1976, 'Łódź'])
+print(osoba.keys())  # dict_keys(['id', 'imie', 'rok', 'miasto'])
+print(osoba.values())  # dict_values([89, 'Radek', 1976, 'Łódź'])
 print(osoba.items())
 # dict_items([('id', 89), ('imie', 'Radek'), ('rok', 1976), ('miasto', 'Łódź')])
+
+lista = [1, 2, 3, 4, 4, 7, 7, 6, 5, 1, 2, 3]
+print(dict.fromkeys(lista))
+# {1: None, 2: None, 3: None, 4: None, 7: None, 6: None, 5: None}
+print(list(dict.fromkeys(lista)))
+# [1, 2, 3, 4, 7, 6, 5] nie tracimy kolejności
+
+# pętla
+licznik = 0
+while True:
+    print("Dane")
+    licznik += 1
+    if licznik > 10:
+        break  # przerywa pętlę
+
+licznik = 0
+while licznik < 10:
+    licznik += 1  # licznik = licznik + 1
+    print("Licznik dane 2")
+
