@@ -255,3 +255,24 @@ osoba = {
     "rok": 1976,
     "miasto": "Łódź"
 }
+
+print(osoba)
+# {'id': 89, 'imie': 'Tadeusz', 'rok': 1976, 'miasto': 'Łódź'}
+
+print(type(osoba))  # <class 'dict'>
+
+print(osoba['miasto']) # Łódź
+# print(osoba["Miasto"]) # KeyError: 'Miasto'
+
+print(osoba.get('miasto'))
+print(osoba.get('Miasto')) # None
+print(osoba.get("Miasto", "default")) # default
+
+osoba['imie'] = "Radek"
+print(osoba)
+# {'id': 89, 'imie': 'Radek', 'rok': 1976, 'miasto': 'Łódź'}
+
+print(osoba.keys()) # dict_keys(['id', 'imie', 'rok', 'miasto'])
+print(osoba.values()) # dict_values([89, 'Radek', 1976, 'Łódź'])
+print(osoba.items())
+# dict_items([('id', 89), ('imie', 'Radek'), ('rok', 1976), ('miasto', 'Łódź')])
