@@ -238,4 +238,6 @@ print(type(drzewa))  # <class 'set'>
 pusty_zbior = set()
 print(pusty_zbior)  # set()
 
-
+lista = [1, 2, 3, 4, 4, 7, 7, 6, 5, 1, 2, 3]
+zbior = set(lista)
+print(zbior)  # {1, 2, 3, 4, 5, 6, 7}
