@@ -59,3 +59,41 @@ print(0.1 + 0.2)  # 0.30000000000000004
 # For example, in a floating-point arithmetic with five base-ten digits,
 # the sum 12.345 + 1.0001 = 13.3451 might be rounded to 13.345.
 # decimal() - pozwala ominąc problem zaokrącglenia
+
+# boolean
+# True, False
+print(bool(100))  # True
+print(bool("radek"))  # True
+
+print(bool(""))  # False
+
+print(bool("0"))  # True
+print(bool(0))  # False
+
+# kolekcje
+# może przechowywać dowolną ilość i dowolne typy na raz
+
+# lista - zachowuje kolejnosć przy dodawaniu elementów, mutowalna
+imiona = ["Jan", "Piotr", "Anna", "Nadia", "Michał"]
+print(imiona)
+# ['Jan', 'Piotr', 'Anna', 'Nadia', 'Michał']
+#    0        1       2       3         4
+#    -5        -4     -3      -2        -1
+print(imiona[1])
+print(imiona[-1])  # Michał
+print(imiona[len(imiona) - 1])  # Michał
+
+print(imiona[-2])  # Nadia
+
+# slicowanie - fragment listy
+print(imiona[2:4])  # ['Anna', 'Nadia']
+print(imiona[1:])  # z ostatnim włącznie, ['Piotr', 'Anna', 'Nadia', 'Michał']
+
+print(imiona[2:5])  # ['Anna', 'Nadia', 'Michał']
+print(imiona[10:25])  # []
+print(imiona[-2:0])  # [3:0]
+print(imiona[0:-2]) # ['Jan', 'Piotr', 'Anna'] -? [0:3]
+
+imiona_p = imiona[::2] # [start:stop:krok] # ['Jan', 'Anna', 'Michał']
+print(imiona_p)
+
