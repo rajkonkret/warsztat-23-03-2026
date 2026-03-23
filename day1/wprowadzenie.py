@@ -329,3 +329,35 @@ print(name1.lower() == name2.lower())  # False
 print(name1.casefold() == name2.casefold())  # True
 
 odp = "Radek"
+
+if odp == "radek":
+    print("Radek")
+elif odp == "Tomek":
+    print("Tomek")
+else:
+    print("Nie znam Cię")
+# Nie znam Cię
+
+# od pythona 3.10 -> match case
+# odp = input("Podaj imię:")
+#
+# match odp.casefold().strip().capitalize():
+#     case "Radek":
+#         print("Ok")
+#     case "Tomek":
+#         print("Też ok")
+#     case _:  # odpowiednik else
+#         print("NIe znam")
+# Podaj imię:radek
+# Ok
+
+# dane = [1, 2, 3]
+dane = {'nazwa': "Radek", "wiek": 42}
+match dane:
+    case [a, b, c]:
+        print(f"Lista z trzema elementami {a=}, {b=}, {c=}")
+    case {"nazwa": n, "wiek": w}:
+        print(f'Słownik reprezentujący osobę: {n}, wiek: {w}')
+    case _:
+        print("Błędny typ danych")
+# Słownik reprezentujący osobę: Radek, wiek: 42
