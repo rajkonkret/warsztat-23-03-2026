@@ -92,8 +92,79 @@ print(imiona[1:])  # z ostatnim włącznie, ['Piotr', 'Anna', 'Nadia', 'Michał'
 print(imiona[2:5])  # ['Anna', 'Nadia', 'Michał']
 print(imiona[10:25])  # []
 print(imiona[-2:0])  # [3:0]
-print(imiona[0:-2]) # ['Jan', 'Piotr', 'Anna'] -? [0:3]
+print(imiona[0:-2])  # ['Jan', 'Piotr', 'Anna'] -? [0:3]
 
-imiona_p = imiona[::2] # [start:stop:krok] # ['Jan', 'Anna', 'Michał']
+imiona_p = imiona[::2]  # [start:stop:krok] # ['Jan', 'Anna', 'Michał']
 print(imiona_p)
 
+lista_p = []
+lista_p2 = list()
+print(lista_p)  # ctrl d - powielenie linii, []
+print(lista_p2)  # []
+
+lista_p.append("Karol")
+print(lista_p)  # ['Karol']
+lista_p.append("Radek")
+lista_p.append("Tomek")
+lista_p.append("Anna")
+print(lista_p)
+# ['Karol', 'Radek', 'Tomek', 'Anna']
+
+
+lista_p.insert(1, "Jan")
+print(lista_p)
+# ['Karol', 'Jan', 'Radek', 'Tomek', 'Anna']
+lista_p.append("Jan")
+print(lista_p)
+
+lista_p.remove("Jan")
+print(lista_p)  # ['Karol', 'Radek', 'Tomek', 'Anna', 'Jan']
+
+# garbage collector
+
+del imiona[3]
+print(imiona)  # ['Jan', 'Piotr', 'Anna', 'Michał']
+
+del lista_p2
+# print(lista_p2)# NameError: name 'lista_p2' is not defined. Did you mean: 'lista_p'?
+
+# enumererate()
+# numerowanie kolekcji
+imen = enumerate(imiona, 111)
+# for i in imen:
+#     print(i)
+# (111, 'Jan')
+# (112, 'Piotr')
+# (113, 'Anna')
+# (114, 'Michał')
+# for i in imen:
+#     print(i[0], i[1])
+# 111 Jan
+# 112 Piotr
+# 113 Anna
+# 114 Michał
+a, b = (112, 'Piotr')
+
+for index, wartosc in imen:
+    # f - string format
+    print(f"index -> {index}, wartość -> {wartosc}")
+# index -> 111, wartość -> Jan
+# index -> 112, wartość -> Piotr
+# index -> 113, wartość -> Anna
+# index -> 114, wartość -> Michał
+
+print("index -> {}, wartosc -> {}".format(index, wartosc))
+# index -> 114, wartosc -> Michał
+print("index:", index, "wartosć:", wartosc)
+# index: 114 wartosć: Michał
+# sep
+#         string inserted between values, default a space.
+#       end
+#         string appended after the last value, default a newline.
+
+print("index:", index, "wartosć:", wartosc, sep="---")
+# index:---114---wartosć:---Michał
+
+# dedykowane do logów
+print("a: %i b: %s" % (index, wartosc))
+# a: 114 b: Michał
