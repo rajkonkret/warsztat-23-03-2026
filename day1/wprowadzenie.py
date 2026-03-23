@@ -248,3 +248,10 @@ print(zbior)  # {1, 2, 3, 4, 5, 6, 7}
 pusty_slownik = {}
 print(type(pusty_slownik))  # <class 'dict'>
 print(pusty_slownik)  # {}
+
+osoba = {
+    "id": 89,
+    "imie": "Tadeusz",
+    "rok": 1976,
+    "miasto": "Łódź"
+}
