@@ -299,22 +299,22 @@ while licznik < 10:
 przekaski = ['hotdog', 'pizza', 'hamburger', 'frytki']
 prompt = "Wybierz swoją przekąskę"
 
-while True:
-    choice = input(prompt)
-
-    if choice in przekaski:
-        break
-    print("Nie ma")
+# while True:
+#     choice = input(prompt.strip())
+#
+#     if choice in przekaski:
+#         break
+#     print("Nie ma")
 print("Dalsza część programu")
 # Wybierz swoją przekąskępizza
 # Dalsza część programu
 
 # operator morsa, walrus operator
-while (choice := input(prompt)) not in przekaski:
-    if choice == "exit":
-        break
-    print("Nie ma")
-
+# while (choice := input(prompt)) not in przekaski:
+#     if choice == "exit":
+#         break
+#     print("Nie ma")
+#
 name = "Radek"
 a = len(name)
 if a > 4:
@@ -322,5 +322,10 @@ if a > 4:
 
 if (a := len(name)) > 4:
     print("Długość większa od 4, wynosi:", a)
+
+name1 = "GROSS"
+name2 = "groẞ"
+print(name1.lower() == name2.lower())  # False
+print(name1.casefold() == name2.casefold())  # True
 
 odp = "Radek"
