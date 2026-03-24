@@ -14,7 +14,35 @@ print(silnia(5))  # 120
 def nwd(a, b):
     if b == 0:
         return a
-    return nwd(b, a % b) # % - modulo, reszta z dzielenia
+    return nwd(b, a % b)  # % - modulo, reszta z dzielenia
 
-print(nwd(48, 18)) # 6
+
+print(nwd(48, 18))  # 6
 #
+# zsumowac wszystkie wartości ze słownika
+nested_data = {
+    "a": 1,
+    "b": {
+        "c": 2,
+        "d": [3, 4, {"e": 5}]
+    },
+    "f": [6, 7]
+}
+
+
+def sum_nested(data):
+    total = 0
+    if isinstance(data, dict):
+        for key, value in data.items():
+            total += sum_nested(value)
+    elif isinstance(data, list):
+        for item in data:
+            total += sum_nested(item)
+    elif isinstance(data, (int, float)):
+        total += data
+
+    return total
+
+
+result = sum_nested(nested_data)
+print("sum nested is:", result)  # sum nested is: 28
