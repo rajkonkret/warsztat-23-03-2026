@@ -15,3 +15,8 @@ def bonus(punkty):
     else:
         bn = punkty
     return f"Liczba punktów z bonusem: {bn}"
+
+def osoba(funkcja, *args):
+    # funkcja wyższego rzędu
+    # *args - dowolna ilosć argumentów prekazanych po pozycji
+    return funkcja(*args)
