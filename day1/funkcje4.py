@@ -54,7 +54,7 @@ print(f"Zastosowanie map(): {list(map(lambda z: z ** 4, liczby))}")
 # filtrowanie danych
 for i in liczby:
     if i < 10:
-        print(i, end=" : " )
+        print(i, end=" : ")
 # 1 : 2 : 5 :
 
 print()
@@ -64,3 +64,7 @@ print(f"Zastosowanie filter(): {list(filter(lambda z: z < 10, liczby))}")
 print(f"Zastosowanie filter(): {list(filter(lambda z: z > 10, liczby))}")
 print(f"Zastosowanie filter(): {list(filter(lambda z: z > 100, liczby))}")
 # x > 10 i x < 250
+print(f"Zastosowanie filter(): {list(filter(lambda z: z > 10 and z < 250, liczby))}")
+# Zastosowanie filter(): [56, 78, 100, 200]
+print(f"Zastosowanie filter(): {list(filter(lambda z: 10 < z < 250, liczby))}")
+# Zastosowanie filter(): [56, 78, 100, 200]
