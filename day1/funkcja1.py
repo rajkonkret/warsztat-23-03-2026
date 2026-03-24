@@ -81,3 +81,33 @@ a, b, wynik = mnozenie2(2, 8)
 print(f"{a} * {b} = {wynik}")
 # 2 * 8 = 16
 # 2 * 8 = 16
+
+# narzędzia skanowania kodu
+# mypy
+# pip install mypy
+# pip list
+# cd day1
+# (.venv) PS C:\project\PYTHON_ZUS_LUW\warsztat-23-03-2026\day1> mypy .\funkcja1.py
+# funkcja1.py:8: note: "odejmij" defined here
+# funkcja1.py:15: error: Name "odejmij" already defined on line 8  [no-redef]
+# funkcja1.py:19: error: Too many arguments for "odejmij"  [call-arg]
+# funkcja1.py:24: error: Name "odejmij" already defined on line 8  [no-redef]
+# funkcja1.py:30: error: Too many arguments for "odejmij"  [call-arg]
+# funkcja1.py:31: error: Too many arguments for "odejmij"  [call-arg]
+# funkcja1.py:34: error: Unexpected keyword argument "c" for "odejmij"  [call-arg]
+# funkcja1.py:35: error: Unexpected keyword argument "b" for "odejmij"  [call-arg]
+# funkcja1.py:35: error: Unexpected keyword argument "a" for "odejmij"  [call-arg]
+# funkcja1.py:35: error: Unexpected keyword argument "c" for "odejmij"  [call-arg]
+# funkcja1.py:38: error: Too many arguments for "odejmij"  [call-arg]
+# funkcja1.py:38: error: Unexpected keyword argument "c" for "odejmij"  [call-arg]
+# funkcja1.py:39: error: Too many arguments for "odejmij"  [call-arg]
+# funkcja1.py:39: error: Unexpected keyword argument "c" for "odejmij"  [call-arg]
+# funkcja1.py:70: error: Argument 1 to "mnozenie2" has incompatible type "str"; expected "int"  [arg-type]
+# funkcja1.py:73: error: Incompatible types in assignment (expression has type "str", variable has type "int")  [assignment]
+# funkcja1.py:80: error: Incompatible types in assignment (expression has type "int", variable has type "tuple[int, int, int]")  [assignment]
+# Found 16 errors in 1 file (checked 1 source file)
+# (.venv) PS C:\project\PYTHON_ZUS_LUW\warsztat-23-03-2026\day1>
+
+# rzutowanie
+print(int("2") + int("4"))  # 6
+print("2" + str(2))  # 22
