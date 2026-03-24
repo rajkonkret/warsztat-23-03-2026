@@ -58,7 +58,6 @@ def my_time():
     time.sleep(2)
 
 
-
 @measure_time
 def add_with_for():
     result = []
@@ -67,5 +66,25 @@ def add_with_for():
         result.append(suma)
     return "OK For"
 
+
+@measure_time
+def add_lc():
+    result = [lista1[i] + lista2[i] for i in lista1]
+    return "OK LC"
+
+
+@measure_time
+def add_zip():
+    result = [a + b for a, b in zip(lista1, lista2)]
+    return "OK ZIP"
+
+@measure_time
+def add_np():
+    result = array1 + array2 # broadcasting
+    return "OK np"
+
 my_time()  # Czas wykonania funkcji: my_time: 2.0010672000007617
-add_with_for()
+add_with_for()  # Czas wykonania funkcji: add_with_for: 1.1639333000002807
+add_lc()  # Czas wykonania funkcji: add_lc: 0.8729951999994228
+add_zip()  # Czas wykonania funkcji: add_zip: 0.853933299998971
+add_np() # Czas wykonania funkcji: add_np: 0.03073670000048878
