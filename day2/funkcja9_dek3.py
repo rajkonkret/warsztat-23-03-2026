@@ -7,8 +7,8 @@ import tracemalloc
 
 # tracemalloc.start()
 #
-# lista1 = list(range(10_000_000))
-# lista2 = list(range(10_000_000))
+lista1 = list(range(10_000_000))
+lista2 = list(range(10_000_000))
 
 # current, peak = tracemalloc.get_traced_memory()
 # tracemalloc.stop()
@@ -22,7 +22,7 @@ import tracemalloc
 # lista1 = list(range(10_000_000))
 # lista2 = list(range(10_000_000))
 
-tracemalloc.start()
+# tracemalloc.start()
 
 # array1 = np.arange(10_000_000, dtype=np.int64)
 # array2 = np.arange(10_000_000, dtype=np.int64)
@@ -30,10 +30,10 @@ tracemalloc.start()
 array1 = np.arange(10_000_000, dtype=np.int16)
 array2 = np.arange(10_000_000, dtype=np.int16)
 
-current, peak = tracemalloc.get_traced_memory()
-tracemalloc.stop()
-print(f"Current memory usage: {current / 1024 ** 2} MB")
-print(f"Peak memory usage: {peak / 1024 ** 2} MB")
+# current, peak = tracemalloc.get_traced_memory()
+# tracemalloc.stop()
+# print(f"Current memory usage: {current / 1024 ** 2} MB")
+# print(f"Peak memory usage: {peak / 1024 ** 2} MB")
 # Current memory usage: 152.58807373046875 MB
 # Peak memory usage: 152.58807373046875 MB
 # int16
