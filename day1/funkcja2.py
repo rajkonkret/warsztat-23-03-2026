@@ -41,6 +41,7 @@ def plik(arg):
     else:
         return odczyt
 
+
 zapis_pliku = plik("zapis")
 zapis_pliku()
 zapis_pliku()
@@ -57,3 +58,6 @@ odczyt_pliku()
 odczyt_pliku()
 odczyt_pliku()
 
+fh = open("test.txt", "w")
+fh.write("Zapisane\n")
+fh.close()
