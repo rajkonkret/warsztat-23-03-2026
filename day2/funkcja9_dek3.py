@@ -24,11 +24,12 @@ lista2 = list(range(10_000_000))
 
 # tracemalloc.start()
 
-# array1 = np.arange(10_000_000, dtype=np.int64)
-# array2 = np.arange(10_000_000, dtype=np.int64)
+array1 = np.arange(10_000_000, dtype=np.int64)
+array2 = np.arange(10_000_000, dtype=np.int64)
 
-array1 = np.arange(10_000_000, dtype=np.int16)
-array2 = np.arange(10_000_000, dtype=np.int16)
+
+# array1 = np.arange(10_000_000, dtype=np.int16)
+# array2 = np.arange(10_000_000, dtype=np.int16)
 
 # current, peak = tracemalloc.get_traced_memory()
 # tracemalloc.stop()
@@ -39,3 +40,14 @@ array2 = np.arange(10_000_000, dtype=np.int16)
 # int16
 # Current memory usage: 38.14715576171875 MB
 # Peak memory usage: 38.14715576171875 MB
+
+def measure_time(func):
+    def wrapper(*args, **kwargs):
+        # start_time = time.time()
+        start_time = time.perf_counter()  # prcyzyjniej
+        result = func(*args, **kwargs)
+        execution_time = time.perf_counter() - start_time
+        print(f"Czas wykonania funkcji: {func.__name__}: {execution_time}")
+        return result
+
+    return wrapper
