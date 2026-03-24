@@ -9,3 +9,9 @@ def konkurs(imie, miejsce, punkty):
     return f"Uczestnik konkursu: {imie}, miejsce: {miejsce}, liczba punktów: {punkty}"
 
 
+def bonus(punkty):
+    if punkty > 50:
+        bn = punkty + 10
+    else:
+        bn = punkty
+    return f"Liczba punktów z bonusem: {bn}"
