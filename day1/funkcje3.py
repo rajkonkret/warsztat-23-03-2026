@@ -25,5 +25,17 @@ def osoba(funkcja, *args):
 
 def multiosoba(*args):
     print(bonus(args[2]))
-    konkurs(*args)
-    print("opublikowano wyniki konkursu")
+    print(f"Imie: {args[0]}")
+    print(konkurs(*args))
+    return "opublikowano wyniki konkursu"
+
+
+print(osoba(witaj, "Leon"))  # Miło Cię widzieć Leon
+print(osoba(konkurs, "Leon", "Szczebrzeszyn", 89))
+# Uczestnik konkursu: Leon, miejsce: Szczebrzeszyn, liczba punktów: 89
+
+print(multiosoba("Anna", "Toruń", 90))
+# Liczba punktów z bonusem: 100
+# Imie: Anna
+# Uczestnik konkursu: Anna, miejsce: Toruń, liczba punktów: 90
+# opublikowano wyniki konkursu
