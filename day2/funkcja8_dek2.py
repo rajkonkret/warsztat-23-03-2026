@@ -8,6 +8,14 @@ def uppercase_decorator(func):
     return wew  # zwracamy adres funkcji, referencję
 
 
+def bold_decorator(func):
+    def wrapper(*args, **kwargs):
+        result = func(*args, **kwargs)
+        return "\033[1m" + result + "\033[0m"
+
+    return wrapper
+
+
 @uppercase_decorator
 def greeting():
     return "Hello world!"
@@ -15,4 +23,12 @@ def greeting():
 
 print(greeting())  # HELLO WORLD!
 
+
 # bold decorator
+# https://en.wikipedia.org/wiki/ANSI_escape_code
+@bold_decorator
+def greeting2(string):
+    return f"(bold) Podałeś: {string}"
+
+
+print(greeting2("Test Radek"))
