@@ -1,4 +1,6 @@
 # zrobic dekorator, który zmienia wynik funkcji na duże litery
+from functools import wraps
+
 
 # "Radek".upper()
 def uppercase_decorator(func):
@@ -50,6 +52,7 @@ from colorama import Fore, Style, init
 # pip install colorama
 
 def color_decorator(func):
+    @wraps(func)
     def wrapper(*args, **kwargs):
         result = func(*args, **kwargs)
         return Fore.RED + result + Style.RESET_ALL
@@ -61,4 +64,10 @@ def color_decorator(func):
 def greeting4(string):
     return f"(color) Podałeś: {string}"
 
+
 print(greeting4("Radek 8"))
+
+print(greeting4.__name__)  # wrapper
+# po uzyciu @wraps -> greeting4
+# '__module__', '__name__', '__qualname__', '__doc__',
+#                        '__annotate__', '__type_params__'
