@@ -68,3 +68,24 @@ print(f"Zastosowanie filter(): {list(filter(lambda z: z > 10 and z < 250, liczby
 # Zastosowanie filter(): [56, 78, 100, 200]
 print(f"Zastosowanie filter(): {list(filter(lambda z: 10 < z < 250, liczby))}")
 # Zastosowanie filter(): [56, 78, 100, 200]
+
+r0 = {'miasto': "Kielce"}
+r1 = {"miasto": "Kielce", "ZIP": "25-900"}
+
+print(r0['miasto'])
+print(r1['miasto'])
+# Kielce
+# Kielce
+
+print(r1['ZIP'])
+# print(r0['ZIP']) # KeyError: 'ZIP'
+
+d_zip = lambda row: row.setdefault("ZIP", "00-000")
+print(d_zip(r0))
+print(d_zip(r1))
+
+print(r0)
+print(r1)
+# {'miasto': 'Kielce', 'ZIP': '00-000'}
+# {'miasto': 'Kielce', 'ZIP': '25-900'}
+
