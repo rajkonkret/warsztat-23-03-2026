@@ -17,3 +17,4 @@ def nwd(a, b):
     return nwd(b, a % b) # % - modulo, reszta z dzielenia
 
 print(nwd(48, 18)) # 6
+#
