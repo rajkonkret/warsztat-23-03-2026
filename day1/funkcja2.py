@@ -22,6 +22,38 @@ zmienna()
 zmienna()
 zmienna()
 
+
 # zrobic funkcję plik()
 # funkcja przyjmuje parametr: zapis, odczyt
 # w zależności od parametru zwróci odpowiednią funcję
+
+def plik(arg):
+    print("Sprawdzam dysk...")
+
+    def zapis():
+        print("Zapis danych do pliku...")
+
+    def odczyt():
+        print("Odczyt danych z pliku...")
+
+    if arg.casefold() == "zapis":
+        return zapis
+    else:
+        return odczyt
+
+zapis_pliku = plik("zapis")
+zapis_pliku()
+zapis_pliku()
+zapis_pliku()
+zapis_pliku()
+zapis_pliku()
+zapis_pliku()
+
+odczyt_pliku = plik("odczyt")
+odczyt_pliku()
+odczyt_pliku()
+odczyt_pliku()
+odczyt_pliku()
+odczyt_pliku()
+odczyt_pliku()
+
