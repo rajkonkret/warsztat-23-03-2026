@@ -51,3 +51,21 @@ def measure_time(func):
         return result
 
     return wrapper
+
+
+@measure_time
+def my_time():
+    time.sleep(2)
+
+
+
+@measure_time
+def add_with_for():
+    result = []
+    for i in range(len(lista1)):
+        suma = lista1[i] + lista2[i]
+        result.append(suma)
+    return "OK For"
+
+my_time()  # Czas wykonania funkcji: my_time: 2.0010672000007617
+add_with_for()
