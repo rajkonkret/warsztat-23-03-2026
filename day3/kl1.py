@@ -20,3 +20,4 @@ print(ob)  # <__main__.MyFirstClass object at 0x000002083AB90C20>
 print(MyFirstClass.__doc__)  # klasa w Pythonie
 # pydoc -b     serwer dokumentacji
 # pydoc -w .\kl1.py plik html z dokumentacją
+print(ob.x)
