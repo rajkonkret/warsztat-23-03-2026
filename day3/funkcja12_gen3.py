@@ -20,3 +20,25 @@ for n in c_u:
 
 for n in c_d:
     print(n)
+
+
+def combined(gen1, gen2):
+    yield from gen1
+    yield from gen2
+
+
+c_d = count_down(3)
+c_u = count_up_to(3)
+
+c = combined(c_u, c_d)
+print(next(c))  # 1
+print(next(c))  # 2
+print(next(c))  # 3
+print(next(c))  # 3
+print(next(c))  # 2
+print(next(c))  # 1
+
+print(35 * "-")
+for i in c:
+    print(i)
+# -----------------------------------
