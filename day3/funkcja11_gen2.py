@@ -51,3 +51,6 @@ for i in wznowienie(6,8):
 # Yield zwraca wartosc: 144
 # Wznowienie działania - dzielenie
 # Yield zwraca wartosc: 2.25
+
+print(20 * "-")
+
