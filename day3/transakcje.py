@@ -9,3 +9,34 @@ transactions = [
     {'id': 6, "type": "expense", "amount": 400, "currency": "EUR"},
     {'id': 7, "type": "income", "amount": 100, "currency": "EUR"},
 ]
+
+
+def filter_transactions(transactions, transaction_type):
+    """
+    filtruje transakcje po typie transakcji expense, income
+    :param transactions:
+    :param transaction_type:
+    :return:
+    """
+    return list(filter(lambda x: x['type'] == transaction_type, transactions))
+
+
+def map_transactions(transactions, currency):
+    """
+    Mapuje transakcje spełniające warunek waluty na kwote w nowej liście
+    :param transactions:
+    :param currency:
+    :return: lista transakcji
+    """
+
+
+def reduce_transactions(mapped):
+    """
+    Zsumuje kwoty transakcji
+    :param mapped:
+    :return: wartości zsumowanych transakcji, int, float
+    """
+
+
+def process_transactions(filtered, currency):
+    pass
