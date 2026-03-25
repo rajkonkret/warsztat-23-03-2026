@@ -42,3 +42,18 @@ print(35 * "-")
 for i in c:
     print(i)
 # -----------------------------------
+
+dane = [x for x in range(5)]
+print(dane)  # [0, 1, 2, 3, 4]
+print(type(dane))  # <class 'list'>
+
+dane = (x for x in range(5))
+print(dane)  # <generator object <genexpr> at 0x000002AF7C0B9630>
+print(type(dane))  # <class 'generator'>
+
+print(next(dane))
+print(next(dane))
+print(next(dane))
+print(next(dane))
+print(next(dane))
+# print(next(dane)) # StopIteration
