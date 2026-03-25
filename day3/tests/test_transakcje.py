@@ -43,7 +43,7 @@ def test_filter_transactions_income():
         {'id': 7, "type": "income", "amount": 100, "currency": "EUR"},
     ]
 
-    assert tr.filter_transactions(tr.transactions, "income")
+    assert tr.filter_transactions(tr.transactions, "income") == expected_list
 
 # test_transakcje.py::test_map_transactions_usd PASSED                                                                                                                                                                         [ 33%]
 # test_transakcje.py::test_reduce_transactions PASSED                                                                                                                                                                          [ 66%]
