@@ -28,6 +28,7 @@ def map_transactions(transactions, currency):
     :param currency:
     :return: lista transakcji
     """
+    return list(map(lambda x: x['amount'] if x['currency'] == currency else 0, transactions))
 
 
 def reduce_transactions(mapped):
