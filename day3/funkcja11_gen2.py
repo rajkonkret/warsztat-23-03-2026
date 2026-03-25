@@ -1,5 +1,5 @@
 import time
-
+from itertools import zip_longest
 
 def wznowienie(n, k):
     print("Wstrzymanie diałania...")
@@ -154,3 +154,17 @@ for i, n in fibo_with_index(10):
 # Pozycja: 7, element: 13
 # Pozycja: 8, element: 21
 # Pozycja: 9, element: 34
+
+person = ["Radek", "Tomek", "Zenek", "Ania", 'Kasia', "Piotr"]
+wiek = [34, 56, 57, 34, 45]
+
+# Radek lat 34
+for p, w in zip(person, wiek):
+    print(f"{p}, lat: {w}")
+# Radek, lat: 34
+# Tomek, lat: 56
+# Zenek, lat: 57
+# Ania, lat: 34
+# Kasia, lat: 45
+
+print(20 * "-")
