@@ -37,7 +37,8 @@ def reduce_transactions(mapped):
     :param mapped:
     :return: wartości zsumowanych transakcji, int, float
     """
+    return reduce(lambda x, y: x + y, mapped, 0)
 
 
-def process_transactions(filtered, currency):
+def process_transactions(transactions, transaction_type, currency):
     pass
