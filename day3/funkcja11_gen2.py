@@ -126,6 +126,7 @@ def fibo_with_index(n):
         yield ind, a
         a, b = b, a + b
 
+
 fib = fibo_with_index(10)
 print(next(fib))
 print(next(fib))
@@ -140,3 +141,16 @@ print(next(fib))
 # https://www.w3schools.com/python/
 # https://www.hackerrank.com/domains/python?filters%5Bstatus%5D%5B%5D=unsolved&badge_type=python
 # https://pl.altapps.net/soft/hackerrank-com
+
+for i, n in fibo_with_index(10):
+    print(f"Pozycja: {i}, element: {n}")
+# Pozycja: 0, element: 0
+# Pozycja: 1, element: 1
+# Pozycja: 2, element: 1
+# Pozycja: 3, element: 2
+# Pozycja: 4, element: 3
+# Pozycja: 5, element: 5
+# Pozycja: 6, element: 8
+# Pozycja: 7, element: 13
+# Pozycja: 8, element: 21
+# Pozycja: 9, element: 34
