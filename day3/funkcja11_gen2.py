@@ -117,4 +117,26 @@ except Exception as e:
     print("błąd:", e)
 # stop
 # Koniec generatora
-g5.close() # zatrzymanie generatora i wskazanie do gc aby usunął
+g5.close()  # zatrzymanie generatora i wskazanie do gc aby usunął
+
+
+def fibo_with_index(n):
+    a, b = 0, 1
+    for ind in range(n):
+        yield ind, a
+        a, b = b, a + b
+
+fib = fibo_with_index(10)
+print(next(fib))
+print(next(fib))
+print(next(fib))
+print(next(fib))
+# (0, 0)
+# (1, 1)
+# (2, 1)
+# (3, 2)
+# selenium, playwright
+# https://naukapythona.com.pl/
+# https://www.w3schools.com/python/
+# https://www.hackerrank.com/domains/python?filters%5Bstatus%5D%5B%5D=unsolved&badge_type=python
+# https://pl.altapps.net/soft/hackerrank-com
