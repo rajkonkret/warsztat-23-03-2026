@@ -23,7 +23,7 @@ class MyFirstClass:
         # self - obiekt przekazany do klasy
         # self.x = x
         # self.y = y
-        self.move(x,y)
+        self.move(x, y)
 
     def move(self, x: int, y: int) -> None:
         """
@@ -35,8 +35,24 @@ class MyFirstClass:
         self.x = x
         self.y = y
 
+    def reset(self):
+        self.move(0, 0)
+
+    def calculate(self, other: "MyFirstClass") -> float:
+        """
+           For a two dimensional point (x, y), gives the hypotenuse
+    using the Pythagorean theorem:  sqrt(x*x + y*y).
+        :param other:
+        :return:
+        """
+        return math.hypot(self.x - other.x, self.y - other.y)
+
     def __str__(self):
         return f"{self.x, self.y}"
+
+    # reprezentacja obiketu dla aprogramisty
+    def __repr__(self):
+        return f"{self.__class__.__name__}{self.x, self.y}"
 
 
 ob = MyFirstClass()
@@ -52,3 +68,32 @@ print(point1.x)
 print(point1.y)
 print(point1)  # (5, 9) po napisaniu metody __str__
 
+point1.move(56, 98)
+print(point1)  # (56, 98)
+
+point1.reset()
+print(point1)  # (0, 0)
+
+point2 = MyFirstClass(56, 89)
+print(point2)  # (56, 89)
+
+print(point1.calculate(point2))
+# self = point1
+# other = point2
+# 105.152270541344
+
+point3 = MyFirstClass(43, 21)
+point4 = MyFirstClass(34, 66)
+
+print(point4)  # (34, 66)
+
+lista = [point1, point2, point3, point4]
+print(lista)
+# __str__ -> print(), str()
+# [<__main__.MyFirstClass object at 0x000001E2198D8E10>,
+# <__main__.MyFirstClass object at 0x000001E2198D8F50>,
+# <__main__.MyFirstClass object at 0x000001E2195ADBA0>,
+# <__main__.MyFirstClass object at 0x000001E2195AF950>]
+# __repr__
+# [MyFirstClass(0, 0), MyFirstClass(56, 89),
+# MyFirstClass(43, 21), MyFirstClass(34, 66)]
