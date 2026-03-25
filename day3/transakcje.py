@@ -1,3 +1,5 @@
+from functools import reduce
+
 transactions = [
     {'id': 1, "type": "income", "amount": 1000, "currency": "USD"},
     {'id': 2, "type": "expense", "amount": 200, "currency": "USD"},
