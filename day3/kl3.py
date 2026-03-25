@@ -135,3 +135,10 @@ pprint(Contact.all_contacts)
 #  Marek marek@wp.pl,
 #  Marek marek@gov.pl +48000000000,
 #  Kamil kamil@gov.pl +48890987811]
+
+# kolejność rozwiązywane nazw metod (pól) dla obiektu
+pprint(Friend.__mro__)
+# (<class '__main__.Friend'>,
+#  <class '__main__.Suplier'>,
+#  <class '__main__.Contact'>,
+#  <class 'object'>)
