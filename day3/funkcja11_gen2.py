@@ -1,6 +1,7 @@
 import time
 from itertools import zip_longest
 
+
 def wznowienie(n, k):
     print("Wstrzymanie diałania...")
     yield 1001  # odeslij dane, wstrzymaj działanie, wznów od nastepnego
@@ -168,3 +169,24 @@ for p, w in zip(person, wiek):
 # Kasia, lat: 45
 
 print(20 * "-")
+zipped = zip_longest(person, wiek, fillvalue="Brak danych")
+print(zipped)
+
+lista_zipped = list(zipped)  # wrzucenie danych do listy, wyczerpany generator
+# --------------------
+# <itertools.zip_longest object at 0x00000268CA89B9C0>
+for imie, wiek in zipped:
+    print(f"{imie}, lat: {wiek}")
+# --------------------
+# <itertools.zip_longest object at 0x000001E4F033B9C0>
+# Radek, lat: 34
+# Tomek, lat: 56
+# Zenek, lat: 57
+# Ania, lat: 34
+# Kasia, lat: 45
+# Piotr, lat: Brak danych
+
+print(20 * "-")
+for imie, wiek in zipped:
+    print(f"{imie}, lat: {wiek}")
+# --------------------
