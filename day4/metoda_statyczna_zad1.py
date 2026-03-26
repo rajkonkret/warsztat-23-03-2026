@@ -27,3 +27,10 @@ class Kalkulator:
         self.x = x
         self.y = y
         self.z = z
+
+    def oblicz(x, y, z):
+        return (x + y) * z
+
+
+Kalkulator.oblicz = staticmethod(Kalkulator.oblicz)
+
