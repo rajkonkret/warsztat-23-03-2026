@@ -47,5 +47,53 @@ class D(A, B):
 d = D()
 d.method()  # Metoda z klasy A
 print(D.__mro__)
+
+
 # (<class '__main__.D'>, <class '__main__.A'>, <class '__main__.B'>, <class 'object'>)
 
+# klasa E
+class E(A, B):
+    def method(self):
+        print("Metoda z klasy E")
+
+
+e = E()
+e.method()  # Metoda z klasy E
+print(E.__mro__)
+
+
+# (<class '__main__.E'>, <class '__main__.A'>, <class '__main__.B'>, <class 'object'>)
+
+
+class F(A, B):
+    """
+    Chcemy uzyc metody z klasy B
+    """
+
+    def method(self):
+        B.method(self)  # jawnie wskazujemy z jakiej klasy chcemy użyc metody
+
+
+f = F()
+f.method()  # Metoda z klasy B
+print(F.__mro__)
+
+
+# (<class '__main__.F'>, <class '__main__.A'>, <class '__main__.B'>, <class 'object'>)
+
+
+class G(A, B):
+    def method(self):
+        super().method()  # super() - klasa nadrzędna, tutaj klasa A
+        print("dopisane")
+        B.method(self)
+
+
+g = G()
+g.method()
+# Metoda z klasy A
+# dopisane
+# Metoda z klasy B
+
+print(G.__mro__)
+#  (<class '__main__.G'>, <class '__main__.A'>, <class '__main__.B'>, <class 'object'>)
