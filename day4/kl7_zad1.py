@@ -16,6 +16,7 @@ while True:
         if odp == "1":
             name = input("Podaj imię kontaktu:")
             number = input("Podaj numer telefonu kontaktu(tylko cyfry):")
+            # A string is a digit string if all characters in the string are digits
             if not number.isdigit():
                 raise ValueError("Numer telefonu powinien zawierac cyfry")
             else:
