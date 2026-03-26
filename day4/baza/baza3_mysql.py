@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 # docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag
 
-load_dotenv()
+load_dotenv() # wczytanie z pliku .env
 
 conn = pymysql.connect(
     host=os.getenv("DB_HOST"),
