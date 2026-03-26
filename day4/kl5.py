@@ -14,3 +14,18 @@ art['tomasz'] = 12
 art['abraham'] = 8
 art['zen'] = 2
 print(art.longest_key())  # abraham
+
+
+class LongestKeyDictMax(dict):
+    def longest_key(self):
+        return max(self.keys(), key=len, default=None)
+
+
+art = LongestKeyDictMax()
+art['tomasz'] = 12
+art['abraham'] = 8
+art['zen'] = 2
+print(art.longest_key())  # abraham
+
+assert "abraham" == art.longest_key()
+# assert "zen" == art.longest_key()  # AssertionError
