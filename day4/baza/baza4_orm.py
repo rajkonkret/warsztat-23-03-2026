@@ -24,3 +24,27 @@ class Person(Base):
 
 
 Base.metadata.create_all(engine)
+# 2026-03-26 13:13:34,425 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+# 2026-03-26 13:13:34,425 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("person")
+# 2026-03-26 13:13:34,425 INFO sqlalchemy.engine.Engine [raw sql] ()
+# 2026-03-26 13:13:34,426 INFO sqlalchemy.engine.Engine COMMIT
+
+Session = sessionmaker(bind=engine)
+session = Session()
+
+person = Person(name="Radek", age="23")
+session.add(person)
+session.commit()
+# INSERT INTO person (name, age) VALUES (?, ?), ('Radek', '23')
+
+# SELECT person.id AS person_id, person.name AS person_name, person.age AS person_age
+# FROM person
+persons = session.query(Person).all()
+print(persons)
+# [Radek, Radek]
+
+for p in persons:
+    print(p.name, p.age)
+# Radek 23
+# Radek 23
+# Radek 23
