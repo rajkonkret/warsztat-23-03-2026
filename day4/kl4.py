@@ -13,6 +13,21 @@ print(d1['name'])  # default
 
 d1 = {}  # pusty słownik
 print(type(d1))  # {}
+
+
 # print(d1['name'])  # KeyError: 'name'
 
 # słownik w którym, gdy nie ma klucza, tworzy taki klucz z wartością domyslna np.: 0
+class AutoDict(dict):
+    def __missing__(self, key):
+        self[key] = 0
+        return key
+
+
+a1 = AutoDict()
+print(a1)  # {}
+print(a1['name'])  # name
+print(a1)  # {'name': 0}
+print(a1['name'])  # 0
+
+# zmienia klucze na małe litera
