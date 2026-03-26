@@ -1,4 +1,5 @@
-# hermetyzacja
+# hermetyzacja - ukrywanie pol
+# enkapsulacja - ukrywanie pol i wystawienie metod do odczytu i zapisu tych pol gettery, settery
 
 class BankAccount:
     def __init__(self, owner, balance):
