@@ -35,3 +35,25 @@ print(num3 == num4)
 print(num5 == num4)  # True
 
 print(num3 > num5)
+
+
+# print(num3 + num4)
+# TypeError: unsupported operand type(s) for +: 'Number2' and 'Number2'
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __add__(self, other):
+        if isinstance(other, Point):
+            return Point(self.x + other.x, self.y + other.y)
+        return NotImplemented
+
+    def __repr__(self):
+        return f"Point({self.x}, {self.y})"
+
+
+point1 = Point(1, 4)
+point2 = Point(9, 4)
+print(point1 + point2)  # Point(10, 8)
