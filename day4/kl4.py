@@ -14,3 +14,5 @@ print(d1['name'])  # default
 d1 = {}  # pusty słownik
 print(type(d1))  # {}
 # print(d1['name'])  # KeyError: 'name'
+
+# słownik w którym, gdy nie ma klucza, tworzy taki klucz z wartością domyslna np.: 0
