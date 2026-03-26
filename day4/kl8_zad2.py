@@ -27,7 +27,7 @@ def validate_isbn(param_name: str = "isbn"):
                 raw = str(kwargs[param_name])
                 clean = raw.replace("-", "").strip()
                 if len(clean) != 10 or not clean.isdigit():
-                    raise ValueError("ISBN musi miec dokłądnie 10 cyfr")
+                    raise ValueError("ISBN musi miec dokładnie 10 cyfr")
                 kwargs[param_name] = clean
                 return fn(*args, **kwargs)
 
@@ -37,7 +37,7 @@ def validate_isbn(param_name: str = "isbn"):
             raw = str(args[1])
             clean = raw.replace("-", "").strip()
             if len(clean) != 10 or not clean.isdigit():
-                raise ValueError("ISBN musi miec dokłądnie 10 cyfr")
+                raise ValueError("ISBN musi miec dokładnie 10 cyfr")
             new_args = list(args)
             new_args[1] = clean
             return fn(*tuple(new_args), **kwargs)
