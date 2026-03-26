@@ -1,5 +1,6 @@
 # selenium - biblioteka do automatyzacji zadan, np.: klikanie na stronach www
 
+# playwright
 from selenium import webdriver
 from bs4 import BeautifulSoup
 
@@ -15,4 +16,4 @@ data = soup.find('script', {'id': '__NEXT_DATA__'}).text
 print(data)
 
 offers_count = int(data.split('offersCount":')[1].split(",")[0])
-print(offers_count)  # 942, 220
+print(offers_count)  # 483
