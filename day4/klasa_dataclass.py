@@ -31,6 +31,41 @@ class Person:
     last_name: str
     id: int
 
+    def grreets(self):
+        print("My name is:", self.first_name)
+
 
 p1 = Person("Jan", "Kowalski", 1)
-print(p1) # Person(first_name='Jan', last_name='Kowalski', id=1)
+p2 = Person("Anna", "Krawiec", 2)
+print(p1)  # Person(first_name='Jan', last_name='Kowalski', id=1)
+print(p2)  # Person(first_name='Anna', last_name='Krawiec', id=2)
+
+people = [p1, p2]
+print(people)
+# [Person(first_name='Jan', last_name='Kowalski', id=1), Person(first_name='Anna', last_name='Krawiec', id=2)]
+
+with open('dane.txt', "w") as f:
+    f.write(str(people))
+
+with open('dane.txt', "r") as f:
+    dane = f.read()
+print(dane)
+print(type(dane))  # <class 'str'>
+
+import pickle
+
+# serializacja i deserializacja danych
+
+with open("dane.pckl", "wb") as f:
+    pickle.dump(people, f)
+
+with open("dane.pckl", "rb") as f:
+    p = pickle.load(f)
+
+print(p)
+print(type(p))  # <class 'list'>
+
+for i in p:
+    i.grreets()
+# My name is: Jan
+# My name is: Anna
